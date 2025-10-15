@@ -26,7 +26,7 @@ export const numberData = {
     return "one thousand";
   }),
   roman: Array.from({length: 1000}, (_, i) => {
-    const num = i + 1;
+    let num = i + 1;
     const values = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
     const symbols = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
     let result = "";
