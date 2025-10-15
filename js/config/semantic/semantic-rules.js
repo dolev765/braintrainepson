@@ -236,3 +236,4 @@ export const SEMANTIC_RULES = {
     defaultEnabled: false,
     examples: ['metacognition-self-awareness', 'self-regulation-control', 'strategy-approach']
   }
+};
