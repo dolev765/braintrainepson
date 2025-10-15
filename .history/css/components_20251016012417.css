@@ -135,7 +135,7 @@
 
 .level-button.active {
     background-color: #cc2929;
-    color: #ffffff;
+    color: #f2e6e6;
     border-color: #cc2929;
 }
 
@@ -147,9 +147,9 @@
 select {
     padding: 6px 10px;
     border-radius: 6px;
-    border: 1px solid #6c757d;
-    background: #ffffff;
-    color: #333333;
+    border: 1px solid #bfb6b6;
+    background: #f2e6e6;
+    color: #262424;
     font-family: "Inter", sans-serif;
     font-size: 14px;
     cursor: pointer;

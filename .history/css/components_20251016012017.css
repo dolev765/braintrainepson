@@ -74,9 +74,9 @@
 
 .mode-button {
     padding: 12px 20px;
-    border: 2px solid #6c757d;
+    border: 2px solid #bfb6b6;
     background-color: transparent;
-    color: #333333;
+    color: #262424;
     border-radius: 8px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -87,14 +87,14 @@
 }
 
 .mode-button:hover {
-    background-color: #f8f9fa;
+    background-color: #f2e6e6;
     border-color: #cc2929;
     color: #cc2929;
 }
 
 .mode-button.active {
     background-color: #cc2929;
-    color: #ffffff;
+    color: #f2e6e6;
     border-color: #cc2929;
 }
 
@@ -113,9 +113,9 @@
 .level-button {
     width: 44px;
     height: 44px;
-    border: 2px solid #6c757d;
+    border: 2px solid #bfb6b6;
     background-color: transparent;
-    color: #333333;
+    color: #262424;
     border-radius: 8px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -128,14 +128,14 @@
 }
 
 .level-button:hover {
-    background-color: #f8f9fa;
+    background-color: #f2e6e6;
     border-color: #cc2929;
     color: #cc2929;
 }
 
 .level-button.active {
     background-color: #cc2929;
-    color: #ffffff;
+    color: #f2e6e6;
     border-color: #cc2929;
 }
 
@@ -147,9 +147,9 @@
 select {
     padding: 6px 10px;
     border-radius: 6px;
-    border: 1px solid #6c757d;
-    background: #ffffff;
-    color: #333333;
+    border: 1px solid #bfb6b6;
+    background: #f2e6e6;
+    color: #262424;
     font-family: "Inter", sans-serif;
     font-size: 14px;
     cursor: pointer;

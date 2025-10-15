@@ -194,12 +194,10 @@ li {
 }
 
 .rule-content-box {
-    background-color: #ffffff;
+    background-color: #f2e6e6;
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .rule-title {
@@ -210,7 +208,7 @@ li {
 }
 
 .rule-instructions {
-    color: #333333;
+    color: #262424;
     margin-bottom: 1.5rem;
     font-size: 1rem;
 }
