@@ -19,12 +19,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/adaptive-posner-task.git"
+    "url": "https://github.com/dolev765/braintrainepson.git"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/adaptive-posner-task/issues"
+    "url": "https://github.com/dolev765/braintrainepson/issues"
   },
-  "homepage": "https://YOUR_USERNAME.github.io/adaptive-posner-task",
+  "homepage": "https://dolev765.github.io/braintrainepson",
   "devDependencies": {
     "live-server": "^1.2.2"
   },
