@@ -135,7 +135,7 @@ export class GameState {
   // Trial management
   generateTrialTypes() {
     this.trialTypes = [];
-    for (let i = 0; i < GAME_CONFIG.TRIALS_PER_SESSION / 2; i++) {
+    for (let i = 0; i < GAME_CONFIG.TOTAL_TRIALS / 2; i++) {
       this.trialTypes.push(true);
       this.trialTypes.push(false);
     }
@@ -152,7 +152,7 @@ export class GameState {
   }
 
   isSessionComplete() {
-    return this.trialCount >= GAME_CONFIG.TRIALS_PER_SESSION;
+    return this.trialCount >= GAME_CONFIG.TOTAL_TRIALS;
   }
 
   // Performance tracking

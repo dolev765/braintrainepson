@@ -152,7 +152,7 @@ export class GameState {
   }
 
   isSessionComplete() {
-    return this.trialCount >= GAME_CONFIG.TRIALS_PER_SESSION;
+    return this.trialCount >= GAME_CONFIG.TOTAL_TRIALS;
   }
 
   // Performance tracking

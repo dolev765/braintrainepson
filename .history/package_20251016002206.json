@@ -1,7 +1,6 @@
 {
   "name": "adaptive-posner-task",
   "version": "1.0.0",
-  "type": "module",
   "description": "A web-based cognitive training application for semantic long-term memory retrieval",
   "main": "index.html",
   "scripts": {

@@ -1,7 +1,6 @@
 {
   "name": "adaptive-posner-task",
   "version": "1.0.0",
-  "type": "module",
   "description": "A web-based cognitive training application for semantic long-term memory retrieval",
   "main": "index.html",
   "scripts": {
@@ -20,12 +19,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dolev765/braintrainepson.git"
+    "url": "https://github.com/YOUR_USERNAME/adaptive-posner-task.git"
   },
   "bugs": {
-    "url": "https://github.com/dolev765/braintrainepson/issues"
+    "url": "https://github.com/YOUR_USERNAME/adaptive-posner-task/issues"
   },
-  "homepage": "https://dolev765.github.io/braintrainepson",
+  "homepage": "https://YOUR_USERNAME.github.io/adaptive-posner-task",
   "devDependencies": {
     "live-server": "^1.2.2"
   },

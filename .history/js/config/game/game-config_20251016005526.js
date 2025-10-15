@@ -14,8 +14,6 @@ export const GAME_CONFIG = {
   // Level progression
   LEVELS_TO_COMPLETE: 10,
   MIN_ACCURACY_FOR_ADVANCEMENT: 0.75,
-  MAX_LEVEL: 50,
-  MIN_LEVEL: 1,
   
   // Response settings
   VALID_KEYS: ['j', 'f', 'J', 'F'],
@@ -35,12 +33,6 @@ export const GAME_CONFIG = {
   // Progress tracking
   SAVE_INTERVAL: 5, // Save every 5 trials
   MAX_HISTORY_DAYS: 30,
-  
-  // Storage keys
-  STORAGE_KEYS: {
-    TASK_DATA: 'posnerTaskData',
-    PROGRESS: 'posnerTaskProgress'
-  },
   
   // Accessibility
   KEYBOARD_NAVIGATION: true,
