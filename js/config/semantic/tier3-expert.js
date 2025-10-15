@@ -104,3 +104,4 @@ export const tier3Categories = {
     ["system","organization"],["framework","arrangement"],["structure","configuration"],["organization","pattern"],["arrangement","design"],
     ["configuration","plan"],["pattern","scheme"],["design","strategy"],["plan","tactic"],["scheme","metacognition"]
   ]
+};
