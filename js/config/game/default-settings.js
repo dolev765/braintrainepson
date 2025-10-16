@@ -19,11 +19,6 @@ export const DEFAULT_SETTINGS = {
     tier3: false  // Expert knowledge
   },
   
-  // Audio settings
-  enableSound: false,
-  soundVolume: 0.5,
-  enableVoiceFeedback: false,
-  
   // Visual settings
   theme: 'light',
   fontSize: 'medium',
