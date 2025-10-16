@@ -27,6 +27,18 @@ export class StimulusGenerator {
     const arr = semanticData[category];
     const isSameTrial = gameState.trialTypes[gameState.trialCount];
     
+    // Bug fix: Check if trialTypes array has enough elements
+    if (!gameState.trialTypes || gameState.trialCount >= gameState.trialTypes.length) {
+      console.error('Trial types array is empty or trial count exceeds array length');
+      return null;
+    }
+    
+    // Bug fix: Check if array is empty
+    if (!arr || arr.length === 0) {
+      console.error('Semantic category array is empty or undefined:', category);
+      return null;
+    }
+    
     // Find the split point between related and unrelated pairs
     // Look for the "Unrelated pairs" comment to find where unrelated pairs start
     let splitIndex = 0;
@@ -40,6 +52,12 @@ export class StimulusGenerator {
     // If no split found, assume half are related, half are unrelated
     if (splitIndex === 0) {
       splitIndex = Math.floor(arr.length / 2);
+    }
+    
+    // Bug fix: Ensure splitIndex is valid
+    if (splitIndex <= 0 || splitIndex >= arr.length) {
+      console.error('Invalid split index for semantic category:', category, 'splitIndex:', splitIndex, 'arr.length:', arr.length);
+      return null;
     }
     
     let idx;
@@ -96,9 +114,17 @@ export class StimulusGenerator {
       
       const index1 = Math.floor(Math.random() * gameState.numberRange);
       let index2;
+      let attempts = 0;
+      const maxAttempts = 100; // Prevent infinite loop
       do {
         index2 = Math.floor(Math.random() * gameState.numberRange);
-      } while (index1 === index2 && gameState.currentRule === 2);
+        attempts++;
+      } while (index1 === index2 && gameState.currentRule === 2 && attempts < maxAttempts);
+      
+      // Bug fix: If we couldn't find different indices and range is too small, use same index
+      if (attempts >= maxAttempts && gameState.numberRange <= 1) {
+        index2 = index1;
+      }
       
       return {
         item1: { value: numberData[format][index1], format, index: index1 },
@@ -184,6 +210,18 @@ export class StimulusGenerator {
         const tier = SEMANTIC_RULES[cat].tier;
         return gameState.enabledSemanticTiers[`tier${tier}`];
       });
+      
+      // Bug fix: Check if enabledCategories is empty
+      if (enabledCategories.length === 0) {
+        console.warn('No semantic categories are enabled. Falling back to numbers mode.');
+        gameState.nextUseSemantic = false;
+        gameState.currentStimulusType = 'numbers';
+        gameState.currentSemanticCategory = null;
+        gameState.nextSemanticCategory = null;
+        gameState.currentRule = Math.random() < 0.5 ? 1 : 2;
+        return;
+      }
+      
       gameState.nextSemanticCategory = enabledCategories[Math.floor(Math.random() * enabledCategories.length)];
       gameState.currentSemanticCategory = gameState.nextSemanticCategory;
       // For semantic, we always use relationship-based decision; set numeric rule to Meaning for compatibility
@@ -203,6 +241,15 @@ export class StimulusGenerator {
       gameState.currentStimulusType = 'semantic';
       gameState.currentSemanticCategory = gameState.nextSemanticCategory;
       gameState.currentPair = this.generateSemanticStimulus();
+      
+      // Bug fix: If semantic generation fails, fall back to numbers
+      if (!gameState.currentPair) {
+        console.warn('Semantic stimulus generation failed, falling back to numbers');
+        gameState.currentStimulusType = 'numbers';
+        gameState.currentSemanticCategory = null;
+        gameState.nextSemanticCategory = null;
+        gameState.currentPair = this.generateNumberStimulus();
+      }
     } else {
       gameState.currentStimulusType = 'numbers';
       gameState.currentSemanticCategory = null;

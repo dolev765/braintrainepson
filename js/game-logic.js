@@ -121,6 +121,14 @@ export class GameLogic {
     }
     
     let isCorrect = false;
+    // Bug fix: Check if currentPair exists
+    if (!gameState.currentPair) {
+      console.error('Current pair is null, cannot determine correctness');
+      this.addHistory(null, false, response);
+      this.proceedToNextTrial(false);
+      return;
+    }
+    
     if (gameState.currentRule === 1) {
       isCorrect = (response === gameState.currentPair.sameFormat);
     } else if (gameState.currentRule === 2) {
