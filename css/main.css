@@ -177,9 +177,11 @@ li {
 }
 
 .session-info {
-    background-color: #d9cece;
+    background-color: #f8f9fa !important;
     padding: 1rem;
     border-radius: 10px;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .mode-description {
@@ -195,9 +197,11 @@ li {
 }
 
 .display-settings {
-    background-color: #d9cece;
+    background-color: #f8f9fa !important;
     padding: 1rem;
     border-radius: 10px;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .checkbox-label {
@@ -355,9 +359,11 @@ li {
 }
 
 .results-box {
-    background-color: #d9cece;
+    background-color: #f8f9fa !important;
     padding: 1.25rem;
     border-radius: 10px;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .stats-container {
@@ -368,14 +374,16 @@ li {
 }
 
 .stat-box {
-    background-color: #f2e6e6;
+    background-color: #f8f9fa !important;
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .stat-value {
-    color: #262424;
+    color: #333333 !important;
     font-size: 1.5rem;
     font-weight: 700;
     margin-top: 0.5rem;
@@ -390,9 +398,11 @@ li {
 .history-container {
     max-height: 300px;
     overflow-y: auto;
-    background-color: #f2e6e6;
+    background-color: #f8f9fa !important;
     padding: 1rem;
     border-radius: 8px;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .history-item {
@@ -439,9 +449,11 @@ li {
 }
 
 .chart-container {
-    background: #f2e6e6;
+    background: #f8f9fa !important;
     border-radius: 10px;
     padding: 1.25rem;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .chart-legend {
