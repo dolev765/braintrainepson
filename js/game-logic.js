@@ -135,10 +135,15 @@ export class GameLogic {
       return;
     }
     
+    console.log(`Trial ${gameState.trialCount + 1}: Rule ${gameState.currentRule}, Response: ${response}, Pair: ${gameState.currentPair.item1.value}-${gameState.currentPair.item2.value}`);
+    console.log(`Pair properties: sameFormat=${gameState.currentPair.sameFormat}, sameMeaning=${gameState.currentPair.sameMeaning}`);
+    
     if (gameState.currentRule === 1) {
       isCorrect = (response === gameState.currentPair.sameFormat);
+      console.log(`Physical Property Rule: response=${response}, sameFormat=${gameState.currentPair.sameFormat}, correct=${isCorrect}`);
     } else if (gameState.currentRule === 2) {
       isCorrect = (response === gameState.currentPair.sameMeaning);
+      console.log(`Meaning Rule: response=${response}, sameMeaning=${gameState.currentPair.sameMeaning}, correct=${isCorrect}`);
     }
     
     gameState.totalAttempts++;

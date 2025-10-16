@@ -153,6 +153,8 @@ export class StimulusGenerator {
 
   // Generate stimulus for meaning rule
   generateMeaningStimulus(combination, leastUsedFormat, isSameTrial) {
+    console.log(`generateMeaningStimulus: isSameTrial=${isSameTrial}, combination=${JSON.stringify(combination)}`);
+    
     if (isSameTrial) {
       // Same meaning trial
       const index = Math.floor(Math.random() * gameState.numberRange);
@@ -161,12 +163,15 @@ export class StimulusGenerator {
       this.formatUsage[format1]++;
       this.formatUsage[format2]++;
       
-      return {
+      const result = {
         item1: { value: numberData[format1][index], format: format1, index },
         item2: { value: numberData[format2][index], format: format2, index },
         sameFormat: false,
         sameMeaning: true
       };
+      
+      console.log(`Same meaning trial: ${result.item1.value} (${format1}, index ${index}) - ${result.item2.value} (${format2}, index ${index})`);
+      return result;
     } else {
       // Different meaning trial
       const format1 = this.formatUsage[leastUsedFormat] === Math.min(...Object.values(this.formatUsage)) ? 
@@ -186,12 +191,15 @@ export class StimulusGenerator {
         index2 = Math.floor(Math.random() * gameState.numberRange);
       } while (index1 === index2);
       
-      return {
+      const result = {
         item1: { value: numberData[format1][index1], format: format1, index: index1 },
         item2: { value: numberData[format2][index2], format: format2, index: index2 },
         sameFormat: format1 === format2,
         sameMeaning: false
       };
+      
+      console.log(`Different meaning trial: ${result.item1.value} (${format1}, index ${index1}) - ${result.item2.value} (${format2}, index ${index2})`);
+      return result;
     }
   }
 
