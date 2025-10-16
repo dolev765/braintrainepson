@@ -181,6 +181,12 @@ export class GameLogic {
   proceedToNextTrial(isCorrect) {
     gameState.nextTrial();
     
+    // Verify trial balance every 10 trials
+    if (gameState.trialCount % 10 === 0) {
+      gameState.verifyTrialBalance();
+      this.uiController.updateTrialBalance();
+    }
+    
     if (gameState.isSessionComplete()) {
       this.completedSession();
     } else {
@@ -190,6 +196,9 @@ export class GameLogic {
 
   // Handle session completion
   completedSession() {
+    // Final balance verification
+    gameState.verifyTrialBalance();
+    
     if (gameState.isProgressiveMode) {
       if (gameState.shouldAdvanceLevel()) {
         if (gameState.advanceLevel()) {

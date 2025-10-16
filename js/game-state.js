@@ -132,18 +132,74 @@ export class GameState {
     return levelTimes[level] || 300;
   }
 
-  // Trial management
+  // Trial management with robust 50/50 balancing
   generateTrialTypes() {
     this.trialTypes = [];
-    for (let i = 0; i < GAME_CONFIG.TRIALS_PER_SESSION / 2; i++) {
-      this.trialTypes.push(true);
+    this.relatedTrialsUsed = 0;
+    this.unrelatedTrialsUsed = 0;
+    this.totalTrialsPlanned = GAME_CONFIG.TRIALS_PER_SESSION;
+    
+    // Create exactly 50% related and 50% unrelated trials
+    const halfTrials = Math.floor(this.totalTrialsPlanned / 2);
+    
+    // Add exactly half as related (true) and half as unrelated (false)
+    for (let i = 0; i < halfTrials; i++) {
+      this.trialTypes.push(true);  // Related trials
+    }
+    for (let i = 0; i < halfTrials; i++) {
+      this.trialTypes.push(false); // Unrelated trials
+    }
+    
+    // If odd number of trials, add one more unrelated to ensure balance
+    if (this.totalTrialsPlanned % 2 === 1) {
       this.trialTypes.push(false);
     }
-    // Shuffle the array
+    
+    // Shuffle the array using Fisher-Yates algorithm
     for (let i = this.trialTypes.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [this.trialTypes[i], this.trialTypes[j]] = [this.trialTypes[j], this.trialTypes[i]];
     }
+    
+    console.log(`Generated ${this.trialTypes.length} trials: ${this.trialTypes.filter(t => t).length} related, ${this.trialTypes.filter(t => !t).length} unrelated`);
+  }
+
+  // Get next trial type with balance enforcement
+  getNextTrialType() {
+    if (this.trialCount >= this.trialTypes.length) {
+      console.warn('Trial count exceeds planned trials, regenerating...');
+      this.generateTrialTypes();
+      this.trialCount = 0;
+    }
+    
+    const trialType = this.trialTypes[this.trialCount];
+    
+    if (trialType) {
+      this.relatedTrialsUsed++;
+    } else {
+      this.unrelatedTrialsUsed++;
+    }
+    
+    return trialType;
+  }
+
+  // Verify trial balance
+  verifyTrialBalance() {
+    const totalUsed = this.relatedTrialsUsed + this.unrelatedTrialsUsed;
+    const relatedPercentage = (this.relatedTrialsUsed / totalUsed) * 100;
+    const unrelatedPercentage = (this.unrelatedTrialsUsed / totalUsed) * 100;
+    
+    console.log(`Trial balance: ${this.relatedTrialsUsed} related (${relatedPercentage.toFixed(1)}%), ${this.unrelatedTrialsUsed} unrelated (${unrelatedPercentage.toFixed(1)}%)`);
+    
+    // Ensure balance is within acceptable range (45-55%)
+    const isBalanced = relatedPercentage >= 45 && relatedPercentage <= 55 && 
+                      unrelatedPercentage >= 45 && unrelatedPercentage <= 55;
+    
+    if (!isBalanced) {
+      console.warn('Trial balance is off! Related:', relatedPercentage.toFixed(1), '%, Unrelated:', unrelatedPercentage.toFixed(1), '%');
+    }
+    
+    return isBalanced;
   }
 
   nextTrial() {

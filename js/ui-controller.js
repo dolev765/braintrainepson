@@ -305,6 +305,23 @@ export class UIController {
     }
   }
 
+  // Update trial balance display
+  updateTrialBalance() {
+    const totalUsed = gameState.relatedTrialsUsed + gameState.unrelatedTrialsUsed;
+    if (totalUsed > 0) {
+      const relatedPercentage = (gameState.relatedTrialsUsed / totalUsed) * 100;
+      const unrelatedPercentage = (gameState.unrelatedTrialsUsed / totalUsed) * 100;
+      
+      console.log(`Trial Balance: ${gameState.relatedTrialsUsed} related (${relatedPercentage.toFixed(1)}%), ${gameState.unrelatedTrialsUsed} unrelated (${unrelatedPercentage.toFixed(1)}%)`);
+      
+      // Update any balance display elements if they exist
+      const balanceElement = document.getElementById('trialBalance');
+      if (balanceElement) {
+        balanceElement.textContent = `Balance: ${relatedPercentage.toFixed(0)}%/${unrelatedPercentage.toFixed(0)}%`;
+      }
+    }
+  }
+
   // Show progress screen
   showProgressScreen() {
     this.hideAllScreens();

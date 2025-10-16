@@ -25,7 +25,7 @@ export class StimulusGenerator {
   generateSemanticStimulus() {
     const category = gameState.nextSemanticCategory;
     const arr = semanticData[category];
-    const isSameTrial = gameState.trialTypes[gameState.trialCount];
+    const isSameTrial = gameState.getNextTrialType();
     
     // Bug fix: Check if trialTypes array has enough elements
     if (!gameState.trialTypes || gameState.trialCount >= gameState.trialTypes.length) {
@@ -93,7 +93,7 @@ export class StimulusGenerator {
       Math.floor(Math.random() * eligibleCombinations.length)
     ];
     
-    const isSameTrial = gameState.trialTypes[gameState.trialCount];
+    const isSameTrial = gameState.getNextTrialType();
     
     if (gameState.currentRule === 1) {
       return this.generatePhysicalPropertyStimulus(selectedCombination, leastUsedFormat, isSameTrial);
