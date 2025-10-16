@@ -26,7 +26,31 @@ export class StimulusGenerator {
     const category = gameState.nextSemanticCategory;
     const arr = semanticData[category];
     const isSameTrial = gameState.trialTypes[gameState.trialCount];
-    const idx = Math.floor(Math.random() * 10) + (isSameTrial ? 0 : 10);
+    
+    // Find the split point between related and unrelated pairs
+    // Look for the "Unrelated pairs" comment to find where unrelated pairs start
+    let splitIndex = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (typeof arr[i] === 'string' && arr[i].includes('Unrelated pairs')) {
+        splitIndex = i + 1;
+        break;
+      }
+    }
+    
+    // If no split found, assume half are related, half are unrelated
+    if (splitIndex === 0) {
+      splitIndex = Math.floor(arr.length / 2);
+    }
+    
+    let idx;
+    if (isSameTrial) {
+      // Select from related pairs (first half)
+      idx = Math.floor(Math.random() * splitIndex);
+    } else {
+      // Select from unrelated pairs (second half)
+      idx = splitIndex + Math.floor(Math.random() * (arr.length - splitIndex));
+    }
+    
     const pair = arr[idx];
 
     return {
