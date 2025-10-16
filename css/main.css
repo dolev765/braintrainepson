@@ -19,11 +19,43 @@ body {
     color-scheme: light !important;
 }
 
-/* Force rule boxes to be light */
+/* Force rule boxes to be light - more specific selectors */
 .rule-explanation,
-.rule-content-box {
+.rule-content-box,
+div.rule-explanation,
+div.rule-content-box {
     background-color: #f8f9fa !important;
+    background: #f8f9fa !important;
     color: #333333 !important;
+}
+
+/* Override any dark themes or extensions */
+.rule-explanation *,
+.rule-content-box * {
+    color: #333333 !important;
+}
+
+.rule-explanation h4,
+.rule-content-box h4 {
+    color: #cc2929 !important;
+}
+
+/* Nuclear option - override everything that might be dark */
+[class*="rule-explanation"],
+[class*="rule-content"],
+.description-content .rule-explanation,
+.description-content .rule-content-box {
+    background-color: #f8f9fa !important;
+    background: #f8f9fa !important;
+    background-image: none !important;
+}
+
+/* Override any immersive translate or extension styles */
+.immersive-translate-target-wrapper,
+.immersive-translate-target-translation-theme-background,
+.immersive-translate-target-translation-block-wrapper-theme-background {
+    background-color: #f8f9fa !important;
+    background: #f8f9fa !important;
 }
 
 #mainContent {
