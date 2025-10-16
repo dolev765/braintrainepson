@@ -75,6 +75,11 @@ class PosnerTaskApp {
       this.toggleSettingsPanel();
     });
 
+    // Logs modal
+    document.getElementById('logsToggle')?.addEventListener('click', () => {
+      this.questionAnswerLog.showModal();
+    });
+
     // Semantic tier toggles
     document.getElementById('tier2Toggle')?.addEventListener('change', (e) => {
       gameState.setSemanticTier('tier2', e.target.checked);

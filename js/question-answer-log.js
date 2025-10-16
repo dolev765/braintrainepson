@@ -2,18 +2,18 @@
 export class QuestionAnswerLog {
   constructor() {
     this.logContainer = document.getElementById('logEntries');
-    this.toggleButton = document.getElementById('toggleLog');
+    this.closeButton = document.getElementById('closeLog');
     this.logElement = document.getElementById('questionAnswerLog');
-    this.isVisible = true;
+    this.isVisible = false;
     this.entries = [];
     
     this.setupEventListeners();
   }
 
   setupEventListeners() {
-    if (this.toggleButton) {
-      this.toggleButton.addEventListener('click', () => {
-        this.toggleVisibility();
+    if (this.closeButton) {
+      this.closeButton.addEventListener('click', () => {
+        this.hideModal();
       });
     }
     
@@ -23,17 +23,28 @@ export class QuestionAnswerLog {
         this.exportLog();
       });
     }
+    
+    // Close modal when clicking outside
+    if (this.logElement) {
+      this.logElement.addEventListener('click', (e) => {
+        if (e.target === this.logElement) {
+          this.hideModal();
+        }
+      });
+    }
   }
 
-  toggleVisibility() {
-    this.isVisible = !this.isVisible;
-    
-    if (this.isVisible) {
+  showModal() {
+    this.isVisible = true;
+    if (this.logElement) {
       this.logElement.classList.remove('hidden');
-      this.toggleButton.textContent = 'Hide';
-    } else {
+    }
+  }
+
+  hideModal() {
+    this.isVisible = false;
+    if (this.logElement) {
       this.logElement.classList.add('hidden');
-      this.toggleButton.textContent = 'Show';
     }
   }
 
