@@ -7,11 +7,17 @@ import { GAME_CONFIG } from './config/index.js';
 export class GameLogic {
   constructor() {
     this.uiController = null;
+    this.questionAnswerLog = null;
   }
 
   // Set UI controller reference
   setUIController(uiController) {
     this.uiController = uiController;
+  }
+
+  // Set question-answer log reference
+  setQuestionAnswerLog(log) {
+    this.questionAnswerLog = log;
   }
 
   // Start a new test session
@@ -147,6 +153,12 @@ export class GameLogic {
     
     this.addHistory(gameState.currentPair, isCorrect, response);
     
+    // Add to question-answer log
+    if (this.questionAnswerLog) {
+      const ruleInfo = this.getCurrentRuleInfo();
+      this.questionAnswerLog.addEntry(gameState.currentPair, response, isCorrect, ruleInfo);
+    }
+    
     // Handle level progression
     if (gameState.isProgressiveMode) {
       if (gameState.shouldDecreaseLevel()) {
@@ -261,6 +273,23 @@ export class GameLogic {
 
   updateNumberRange(range) {
     gameState.setNumberRange(range);
+  }
+
+  // Get current rule information for logging
+  getCurrentRuleInfo() {
+    if (gameState.currentStimulusType === 'semantic') {
+      const category = gameState.currentSemanticCategory;
+      if (category && window.SEMANTIC_RULES && window.SEMANTIC_RULES[category]) {
+        return window.SEMANTIC_RULES[category];
+      }
+      return { title: 'Semantic', description: 'Semantic relationship judgment' };
+    } else {
+      if (gameState.currentRule === 1) {
+        return { title: 'Physical Property', description: 'Judge if numbers have same physical format' };
+      } else {
+        return { title: 'Meaning', description: 'Judge if numbers have same meaning' };
+      }
+    }
   }
 
   // Start the task

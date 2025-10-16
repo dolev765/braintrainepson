@@ -289,3 +289,6 @@ export class StimulusGenerator {
 
 // Create global stimulus generator instance
 export const stimulusGenerator = new StimulusGenerator();
+
+// Make SEMANTIC_RULES available globally for logging
+window.SEMANTIC_RULES = SEMANTIC_RULES;

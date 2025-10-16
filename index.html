@@ -310,6 +310,30 @@
         </div>
     </div>
     
+    <!-- Question-Answer Log -->
+    <div id="questionAnswerLog" class="question-answer-log">
+        <div class="log-header">
+            <h3>Question-Answer Log</h3>
+            <div class="log-controls">
+                <button id="exportLog" class="export-log-btn">Export</button>
+                <button id="toggleLog" class="toggle-log-btn">Hide</button>
+            </div>
+        </div>
+        <div id="logContent" class="log-content">
+            <div class="log-entry log-header-row">
+                <div class="log-trial">Trial</div>
+                <div class="log-pair">Pair</div>
+                <div class="log-rule">Rule</div>
+                <div class="log-response">Response</div>
+                <div class="log-correct">Correct</div>
+                <div class="log-time">Time</div>
+            </div>
+            <div id="logEntries" class="log-entries">
+                <!-- Log entries will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+    
     <!-- Scripts -->
     <script type="module" src="js/main.js"></script>
 </body>

@@ -4,6 +4,7 @@ import { gameState } from './game-state.js';
 import { gameLogic } from './game-logic.js';
 import { uiController } from './ui-controller.js';
 import { progressTracker } from './progress-tracker.js';
+import { QuestionAnswerLog } from './question-answer-log.js';
 
 // Initialize the application
 class PosnerTaskApp {
@@ -18,6 +19,10 @@ class PosnerTaskApp {
     // Set up cross-references
     gameLogic.setUIController(uiController);
     progressTracker.setUIController(uiController);
+    
+    // Initialize question-answer log
+    this.questionAnswerLog = new QuestionAnswerLog();
+    gameLogic.setQuestionAnswerLog(this.questionAnswerLog);
     
     // Initialize UI
     uiController.updateLastCompletedLevel();
