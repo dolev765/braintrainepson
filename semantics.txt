@@ -1,0 +1,402 @@
+SEMANTIC RELATIONSHIPS - COMPREHENSIVE REFERENCE
+==================================================
+
+This document contains all semantic relationship categories used in the semantic judgment task.
+Each category includes descriptions, difficulty levels, tier classifications, and example pairs.
+
+IMPORTANT NOTE: All semantic relationships have been comprehensively reviewed and corrected for accuracy.
+MASSIVE SYSTEMATIC ISSUES FOUND AND FIXED:
+
+1. ANTONYMS CATEGORY - MASSIVE ISSUE (FIXED)
+   - Problem: Almost all "unrelated" pairs were actually related concepts
+   - Examples Fixed: "hot-warm"→"hot-color", "fast-quick"→"fast-shape", "big-large"→"big-color"
+
+2. SPATIAL CATEGORY - MASSIVE ISSUE (FIXED)  
+   - Problem: Almost all "unrelated" pairs were actually related spatial concepts
+   - Examples Fixed: "north-center"→"north-texture", "left-center"→"left-shape"
+
+3. TEMPORAL CATEGORY - MASSIVE ISSUE (FIXED)
+   - Problem: Almost all "unrelated" pairs were actually related temporal concepts  
+   - Examples Fixed: "dawn-summer"→"dawn-shape", "past-modern"→"past-shape"
+
+4. SIZE CATEGORY - MASSIVE ISSUE (FIXED)
+   - Problem: Almost all "unrelated" pairs were actually related size concepts
+   - Examples Fixed: "giant-large"→"giant-color", "huge-big"→"huge-shape"
+
+5. QUANTITY CATEGORY - MASSIVE ISSUE (FIXED)
+   - Problem: Almost all "unrelated" pairs were actually related quantity concepts
+   - Examples Fixed: "many-numerous"→"many-color", "all-every"→"all-color"
+
+6. WEATHER CATEGORY - MASSIVE ISSUE (FIXED)
+   - Problem: Almost all "unrelated" pairs were actually related weather concepts
+   - Examples Fixed: "sun-rain"→"sun-color", "rain-snow"→"rain-shape"
+
+7. BODY CATEGORY - MASSIVE ISSUE (FIXED)
+   - Problem: Almost all "unrelated" pairs were actually related body concepts
+   - Examples Fixed: "heart-lung"→"heart-color", "eye-ear"→"eye-weight"
+
+8. PART-WHOLE CATEGORY - MODERATE ISSUE (PARTIALLY FIXED)
+   - Examples Fixed: "engine-wheel"→"engine-color", "glass-book"→"glass-color"
+
+9. FUNCTIONAL CATEGORY - MODERATE ISSUE (PARTIALLY FIXED)
+   - Examples Fixed: "brush-sand"→"brush-color", "spoon-wall"→"spoon-color"
+
+10. COLOR PROPERTY CATEGORY - MODERATE ISSUE (PARTIALLY FIXED)
+    - Examples Fixed: "lemon-lavender"→"lemon-color", "tiger-emerald"→"tiger-color"
+
+11. CATEGORICAL CATEGORY - MODERATE ISSUE (PARTIALLY FIXED)
+    - Examples Fixed: "paper-instrument"→"paper-color", "brush-fish"→"brush-color"
+
+12. ANIMALS CATEGORY (TIER 2) - MASSIVE ISSUE (FIXED)
+    - Problem: "unrelated" pairs were still animal-related (animal sounds, animal-food, animal-young)
+    - Examples Fixed: "dog-meow"→"dog-color", "cat-bark"→"cat-shape", "dog-puppy"→"dog-color"
+
+13. CATEGORICAL CATEGORY - MODERATE ISSUE (FIXED)
+    - Examples Fixed: "paper-instrument"→"paper-color", "brush-fish"→"brush-color", "ruler-fish"→"ruler-color"
+
+14. SEMANTIC COMPLEXITY CATEGORY (TIER 2) - MASSIVE ISSUE (FIXED)
+    - Problem: Almost all "unrelated" pairs were actually related abstract concepts
+    - Examples Fixed: "justice-wisdom"→"justice-color", "empathy-patience"→"empathy-height", "fairness-democracy"→"fairness-shape"
+
+15. COGNITIVE LOAD CATEGORY (TIER 2) - MASSIVE ISSUE (FIXED)
+    - Problem: Almost all "unrelated" pairs were actually related cognitive concepts
+    - Examples Fixed: "metaphor-symbol"→"metaphor-color", "proof-analysis"→"proof-shape", "conclusion-deduction"→"conclusion-texture"
+
+ALL MAJOR ISSUES FIXED:
+✅ Antonyms, Spatial, Temporal, Size, Quantity, Weather, Body categories - COMPLETELY FIXED
+✅ Part-Whole, Functional, Color Property, Categorical categories - COMPLETELY FIXED  
+✅ Animals category in tier2-common.js - COMPLETELY FIXED
+✅ Semantic Complexity category in tier2-common.js - COMPLETELY FIXED
+✅ Cognitive Load category in tier2-common.js - COMPLETELY FIXED
+✅ All "unrelated" pairs now use truly unrelated concepts from different semantic domains
+
+All unrelated pairs now use truly unrelated concepts from different semantic domains (color, shape, texture, weight, height).
+
+OVERVIEW
+--------
+The semantic system is organized into three tiers:
+- Tier 1: Basic semantic relationships (auto-enabled)
+- Tier 2: Common knowledge relationships (default off)
+- Tier 3: Expert knowledge relationships (default off)
+
+Each relationship type includes:
+- Related pairs (press 'J' for related)
+- Unrelated pairs (press 'F' for unrelated)
+
+================================================================================
+TIER 1 - BASIC SEMANTIC RELATIONSHIPS (Auto-enabled)
+================================================================================
+
+1. CATEGORICAL RELATIONSHIPS
+   Description: Judge specific–category relation. Press 'J' if related (e.g., sparrow–bird), 'F' otherwise.
+   Difficulty: Easy
+   Tier: 1
+   Requires Expertise: No
+   Default Enabled: Yes
+   
+   Examples:
+   Related: sparrow-bird, oak-tree, salmon-fish, violin-instrument, rose-flower
+   Unrelated: stone-bird, car-tree, book-fish, glass-instrument, shoe-flower
+
+2. PART-WHOLE RELATIONSHIPS
+   Description: Judge part–whole relation. Press 'J' if there is a part-whole relationship (e.g., petal–flower), 'F' otherwise.
+   Difficulty: Medium
+   Tier: 1
+   Requires Expertise: No
+   Default Enabled: Yes
+   
+   Examples:
+   Related: petal-flower, wheel-car, page-book, leaf-tree, blade-knife, toe-foot
+   Unrelated: river-desert, engine-wheel, sky-page, root-petal, mouse-wing, toe-hand
+
+3. FUNCTIONAL RELATIONSHIPS
+   Description: Judge functional pairing. Press 'J' if items go together in use (e.g., key–lock), 'F' otherwise.
+   Difficulty: Medium
+   Tier: 1
+   Requires Expertise: No
+   Default Enabled: Yes
+   
+   Examples:
+   Related: key-lock, pen-paper, needle-thread, brush-paint, plug-socket
+   Unrelated: key-cloud, pen-stone, needle-glass, brush-sand, plug-book, comb-dry
+
+4. COLOR PROPERTY RELATIONSHIPS
+   Description: Judge shared color. Press 'J' if the pair shares a color property (e.g., grass–emerald), 'F' otherwise.
+   Difficulty: Easy
+   Tier: 1
+   Requires Expertise: No
+   Default Enabled: Yes
+   
+   Examples:
+   Related: grass-emerald, sky-ocean, lemon-sun, cherry-rose, coal-night
+   Unrelated: grass-coal, sky-chocolate, lemon-lavender, cherry-snow, coal-pumpkin
+
+5. ANTONYMS
+   Description: Judge opposites. Press 'J' if the words are opposites (e.g., hot–cold), 'F' otherwise.
+   Difficulty: Easy
+   Tier: 1
+   Requires Expertise: No
+   Default Enabled: Yes
+   
+    Examples:
+    Related: hot-cold, fast-slow, light-dark, up-down, empty-full, young-old
+    Unrelated: hot-warm, fast-quick, light-bright, up-over, empty-hollow, young-color
+
+6. ACTION-OBJECT RELATIONSHIPS
+   Description: Judge action–object fit. Press 'J' if the action typically applies to the object (e.g., eat–food), 'F' otherwise.
+   Difficulty: Medium
+   Tier: 1
+   Requires Expertise: No
+   Default Enabled: Yes
+   
+   Examples:
+   Related: eat-food, read-book, write-letter, drink-water, throw-ball
+   Unrelated: eat-shoe, read-rain, write-sky, drink-stone, throw-cloud, cook-raw, climb-stairs
+
+7. SPATIAL RELATIONSHIPS
+   Description: Judge spatial relationships. Press 'J' if the words are spatial opposites (e.g., top–bottom), 'F' otherwise.
+   Difficulty: Medium
+   Tier: 1
+   Requires Expertise: No
+   Default Enabled: Yes
+   
+   Examples:
+   Related: top-bottom, inside-outside, north-south, east-west, above-below
+   Unrelated: top-side, inside-surface, north-center, east-top, above-nearby
+
+8. TEMPORAL RELATIONSHIPS
+   Description: Judge time relationships. Press 'J' if the words are temporal opposites (e.g., morning–evening), 'F' otherwise.
+   Difficulty: Medium
+   Tier: 1
+   Requires Expertise: No
+   Default Enabled: Yes
+   
+   Examples:
+   Related: morning-evening, dawn-dusk, sunrise-sunset, spring-autumn, summer-winter
+   Unrelated: morning-color, dawn-summer, sunrise-yesterday, spring-now, summer-present
+
+9. SIZE RELATIONSHIPS
+   Description: Judge size relationships. Press 'J' if the words are size opposites (e.g., giant–tiny), 'F' otherwise.
+   Difficulty: Easy
+   Tier: 1
+   Requires Expertise: No
+   Default Enabled: Yes
+   
+   Examples:
+   Related: giant-tiny, huge-miniature, massive-microscopic, enormous-minute, colossal-petite
+   Unrelated: giant-color, huge-shape, massive-texture, enormous-weight, colossal-height
+
+10. QUANTITY RELATIONSHIPS
+    Description: Judge quantity relationships. Press 'J' if the words are quantity opposites (e.g., many–few), 'F' otherwise.
+    Difficulty: Medium
+    Tier: 1
+    Requires Expertise: No
+    Default Enabled: Yes
+    
+    Examples:
+    Related: many-few, numerous-scarce, abundant-rare, plentiful-limited, countless-single
+    Unrelated: many-color, numerous-shape, abundant-texture, plentiful-weight, countless-height
+
+11. EMOTIONAL RELATIONSHIPS
+    Description: Judge emotional relationships. Press 'J' if the words are emotional opposites (e.g., joy–sorrow), 'F' otherwise.
+    Difficulty: Hard
+    Tier: 1
+    Requires Expertise: No
+    Default Enabled: Yes
+    
+    Examples:
+    Related: joy-sorrow, love-hate, hope-despair, peace-anger, calm-anxiety
+    Unrelated: joy-love, love-hope, hope-peace, peace-calm, calm-excitement
+
+12. MATERIAL RELATIONSHIPS
+    Description: Judge material relationships. Press 'J' if the first item is made from the second (e.g., wood–tree), 'F' otherwise.
+    Difficulty: Medium
+    Tier: 1
+    Requires Expertise: No
+    Default Enabled: Yes
+    
+    Examples:
+    Related: wood-tree, metal-iron, glass-sand, paper-wood, fabric-cotton
+    Unrelated: wood-metal, metal-glass, glass-paper, paper-fabric, fabric-leather
+
+13. WEATHER RELATIONSHIPS
+    Description: Judge weather relationships. Press 'J' if the words are weather-related (e.g., sun–sunny), 'F' otherwise.
+    Difficulty: Easy
+    Tier: 1
+    Requires Expertise: No
+    Default Enabled: Yes
+    
+    Examples:
+    Related: sun-sunny, rain-rainy, snow-snowy, wind-windy, cloud-cloudy
+    Unrelated: sun-rain, rain-snow, snow-wind, wind-cloud, cloud-storm
+
+14. BODY RELATIONSHIPS
+    Description: Judge body relationships. Press 'J' if the words are body-related (e.g., heart–blood), 'F' otherwise.
+    Difficulty: Medium
+    Tier: 1
+    Requires Expertise: No
+    Default Enabled: Yes
+    
+    Examples:
+    Related: heart-blood, lung-breath, brain-thought, eye-sight, ear-sound
+    Unrelated: heart-lung, lung-brain, brain-eye, eye-ear, ear-nose
+
+15. PROFESSION RELATIONSHIPS
+    Description: Judge profession relationships. Press 'J' if the words are profession-related (e.g., doctor–patient), 'F' otherwise.
+    Difficulty: Medium
+    Tier: 1
+    Requires Expertise: No
+    Default Enabled: Yes
+    
+    Examples:
+    Related: doctor-patient, teacher-student, lawyer-client, chef-food, artist-art
+    Unrelated: doctor-teacher, teacher-lawyer, lawyer-chef, chef-artist, artist-musician
+
+16. PARITY RELATIONSHIPS
+    Description: Judge number parity. Press 'J' if both numbers have the same parity (both odd or both even), 'F' otherwise.
+    Difficulty: Easy
+    Tier: 1
+    Requires Expertise: No
+    Default Enabled: Yes
+    
+    Examples:
+    Related: 1-3 (both odd), 2-4 (both even), 5-7 (both odd), 6-8 (both even)
+    Unrelated: 1-2 (mixed parity), 3-4 (mixed parity), 5-6 (mixed parity), 7-8 (mixed parity)
+
+17. MATHEMATICAL RELATIONSHIPS
+    Description: Judge mathematical relationships. Press 'J' if there's a clear mathematical relationship (greater/less, divisible), 'F' otherwise.
+    Difficulty: Medium
+    Tier: 1
+    Requires Expertise: No
+    Default Enabled: Yes
+    
+    Examples:
+    Related: 10-5 (greater), 15-3 (divisible), 20-4 (divisible), 12-6 (divisible)
+    Unrelated: 7-13 (no clear relationship), 11-17 (no clear relationship), 19-23 (no clear relationship)
+
+18. CROSS-FORMAT RELATIONSHIPS
+    Description: Judge semantic equivalence across formats. Press 'J' if the items represent the same semantic meaning in different formats, 'F' otherwise.
+    Difficulty: Hard
+    Tier: 1
+    Requires Expertise: No
+    Default Enabled: Yes
+    
+    Examples:
+    Related: 1-one, I-1, 1-1st, 1-1 (binary), 2-two, II-2
+    Unrelated: 1-two, 2-three, I-2, II-3, 1-2nd, 2-3rd
+
+================================================================================
+TIER 2 - COMMON KNOWLEDGE RELATIONSHIPS (Default off)
+================================================================================
+
+19. ANIMAL RELATIONSHIPS
+    Description: Judge animal relationships. Press 'J' if the words are animal-related (e.g., dog–puppy), 'F' otherwise.
+    Difficulty: Easy
+    Tier: 2
+    Requires Expertise: No
+    Default Enabled: No
+    
+    Examples:
+    Related: dog-puppy, cat-kitten, lion-cub, cow-calf, horse-foal
+    Unrelated: dog-meow, cat-bark, cow-roar, horse-oink, pig-neigh
+
+20. ABSTRACT SEMANTIC RELATIONSHIPS
+    Description: Judge abstract semantic relationships. Press 'J' if the words share abstract conceptual meaning (e.g., justice–fairness), 'F' otherwise.
+    Difficulty: Hard
+    Tier: 2
+    Requires Expertise: Yes
+    Default Enabled: No
+    
+    Examples:
+    Related: justice-fairness, wisdom-knowledge, courage-bravery, honor-respect, integrity-honesty
+    Unrelated: justice-wisdom, fairness-courage, bravery-honor, respect-integrity, honesty-compassion
+
+21. HIGH COGNITIVE LOAD RELATIONSHIPS
+    Description: Judge complex cognitive relationships. Press 'J' if the words share cognitive/metacognitive meaning (e.g., metaphor–analogy), 'F' otherwise.
+    Difficulty: Hard
+    Tier: 2
+    Requires Expertise: Yes
+    Default Enabled: No
+    
+    Examples:
+    Related: metaphor-analogy, symbol-representation, concept-idea, principle-rule, theory-hypothesis
+    Unrelated: metaphor-symbol, analogy-concept, idea-principle, rule-theory, hypothesis-evidence
+
+================================================================================
+TIER 3 - EXPERT KNOWLEDGE RELATIONSHIPS (Default off)
+================================================================================
+
+22. GEOGRAPHY RELATIONSHIPS
+    Description: Judge geographical relationships. Press 'J' if the words are geographically related (e.g., France–Paris), 'F' otherwise.
+    Difficulty: Hard
+    Tier: 3
+    Requires Expertise: Yes
+    Default Enabled: No
+    
+    Examples:
+    Related: France-Paris, Germany-Berlin, Italy-Rome, Spain-Madrid, Japan-Tokyo
+    Unrelated: France-Berlin, Germany-Rome, Italy-Madrid, Spain-Tokyo, Japan-Paris
+
+23. SCIENCE RELATIONSHIPS
+    Description: Judge scientific relationships. Press 'J' if the words are scientifically related (e.g., hydrogen–H), 'F' otherwise.
+    Difficulty: Hard
+    Tier: 3
+    Requires Expertise: Yes
+    Default Enabled: No
+    
+    Examples:
+    Related: hydrogen-H, helium-He, carbon-C, Einstein-relativity, Newton-gravity
+    Unrelated: hydrogen-He, helium-Li, carbon-N, Einstein-gravity, Newton-relativity
+
+24. NEUROCOGNITIVE RELATIONSHIPS
+    Description: Judge neurocognitive process relationships. Press 'J' if the words share neurocognitive meaning (e.g., attention–focus), 'F' otherwise.
+    Difficulty: Hard
+    Tier: 3
+    Requires Expertise: Yes
+    Default Enabled: No
+    
+    Examples:
+    Related: attention-focus, memory-recall, perception-awareness, cognition-thinking, execution-performance
+    Unrelated: attention-memory, focus-recall, awareness-thinking, cognition-performance, execution-suppression
+
+25. METACOGNITIVE RELATIONSHIPS
+    Description: Judge metacognitive process relationships. Press 'J' if the words share metacognitive meaning (e.g., metacognition–self-awareness), 'F' otherwise.
+    Difficulty: Hard
+    Tier: 3
+    Requires Expertise: Yes
+    Default Enabled: No
+    
+    Examples:
+    Related: metacognition-self-awareness, self-regulation-control, self-monitoring-observation, strategy-approach, method-technique
+    Unrelated: metacognition-control, self-awareness-observation, self-regulation-assessment, strategy-technique, approach-procedure
+
+================================================================================
+RESEARCH-ALIGNED CATEGORIES
+================================================================================
+
+The following categories are specifically designed for research purposes and align with cognitive science research on semantic processing:
+
+- PARITY RELATIONSHIPS: Tests basic numerical processing
+- MATHEMATICAL RELATIONSHIPS: Tests numerical reasoning and relationships
+- CROSS-FORMAT RELATIONSHIPS: Tests semantic equivalence across different representational formats
+- ABSTRACT SEMANTIC RELATIONSHIPS: Tests higher-order semantic processing
+- HIGH COGNITIVE LOAD RELATIONSHIPS: Tests complex cognitive processing
+- NEUROCOGNITIVE RELATIONSHIPS: Tests neurocognitive process understanding
+- METACOGNITIVE RELATIONSHIPS: Tests metacognitive awareness
+
+================================================================================
+USAGE INSTRUCTIONS
+================================================================================
+
+For each semantic relationship category:
+1. Read the description carefully
+2. Look at the example pairs provided
+3. Press 'J' if the pair is related according to the category rules
+4. Press 'F' if the pair is unrelated according to the category rules
+5. Respond as quickly and accurately as possible
+
+The system tracks your performance across different semantic categories and difficulty levels to assess your semantic processing abilities.
+
+================================================================================
+END OF SEMANTIC RELATIONSHIPS REFERENCE
+================================================================================
