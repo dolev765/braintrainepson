@@ -14,3 +14,4 @@ export const semanticData = {
 // Re-export individual tiers for flexibility
 export { tier1Categories, tier2Categories, tier3Categories };
 
+

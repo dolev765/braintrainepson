@@ -13,3 +13,4 @@ export const levelTimes = {
   46: 1, 47: 1, 48: 1, 49: 1, 50: 1
 };
 
+

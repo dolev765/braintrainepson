@@ -1,4 +1,7 @@
+
+
 export const SEMANTIC_RULES = {
+  
   categorical: {
     title: 'Categorical',
     description: "Judge specific–category relation. Press 'J' if related (e.g., sparrow–bird), 'F' otherwise.",
@@ -19,12 +22,12 @@ export const SEMANTIC_RULES = {
   },
   functional: {
     title: 'Functional',
-    description: "Judge functional pairing. Press 'J' if items go together in use (e.g., key–lock), 'F' otherwise.",
+    description: "Judge functional pairing. Press 'J' if items go together in use (e.g., key–lock, back-support), 'F' otherwise.",
     difficulty: 'medium',
     tier: 1,
     requiresExpertise: false,
     defaultEnabled: true,
-    examples: ['key-lock', 'pen-paper', 'needle-thread']
+    examples: ['key-lock', 'pen-paper', 'needle-thread', 'back-support']
   },
   colorProperty: {
     title: 'Color Property',

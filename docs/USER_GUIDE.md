@@ -168,3 +168,4 @@ If you encounter issues:
 - **No Tracking**: No personal data is sent to external servers
 - **Progress Data**: Only your training progress is saved locally
 - **Reset Option**: You can reset your progress at any time
+

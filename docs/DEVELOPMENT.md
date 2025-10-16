@@ -117,3 +117,4 @@ No build process required - just upload all files to your hosting service.
 
 ### Debug Mode
 Add `?debug=true` to URL for additional console logging (if implemented).
+

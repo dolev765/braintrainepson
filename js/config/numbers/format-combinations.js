@@ -48,3 +48,4 @@ export const formatCombinations = [
   { name: "Percentage-Tally", formats: ["percentage", "tally"] }
 ];
 
+

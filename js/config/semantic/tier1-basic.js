@@ -27,23 +27,23 @@ export const tier1Categories = {
     ["stone","bird"],["car","tree"],["book","fish"],["glass","instrument"],["shoe","flower"],
     ["cloud","bird"],["lamp","tree"],["coin","fish"],["wire","instrument"],["brick","flower"],
     ["chair","bird"],["phone","tree"],["table","fish"],["rope","instrument"],["hat","flower"],
-    ["door","bird"],["window","tree"],["cup","fish"],["paper","instrument"],["bag","flower"],
+    ["door","bird"],["window","tree"],["cup","fish"],["paper","color"],["bag","flower"],
     ["computer","bird"],["key","tree"],["clock","fish"],["button","instrument"],["box","flower"],
     ["mirror","bird"],["plate","tree"],["spoon","fish"],["chain","instrument"],["bottle","flower"],
     ["camera","bird"],["knife","tree"],["fork","fish"],["nail","instrument"],["can","flower"],
-    ["watch","bird"],["pen","tree"],["brush","fish"],["screw","instrument"],["jar","flower"],
-    ["wallet","bird"],["scissors","tree"],["comb","fish"],["pin","instrument"],["tube","flower"],
-    ["umbrella","bird"],["hammer","tree"],["ruler","fish"],["clip","instrument"],["disk","flower"],
-    ["backpack","bird"],["stapler","tree"],["eraser","fish"],["hook","instrument"],["card","flower"],
-    ["notebook","bird"],["calculator","tree"],["pencil","fish"],["ring","instrument"],["ticket","flower"],
-    ["passport","bird"],["diary","tree"],["marker","fish"],["bracelet","instrument"],["stamp","flower"],
-    ["receipt","bird"],["envelope","tree"],["crayon","fish"],["necklace","instrument"],["coupon","flower"],
-    ["ticket","bird"],["folder","tree"],["chalk","fish"],["earring","instrument"],["badge","flower"],
-    ["calendar","bird"],["binder","tree"],["paint","fish"],["brooch","instrument"],["label","flower"],
-    ["magazine","bird"],["newspaper","tree"],["ink","fish"],["pendant","instrument"],["tag","flower"],
-    ["bookmark","bird"],["postcard","tree"],["glue","fish"],["charm","instrument"],["sticker","flower"],
-    ["booklet","bird"],["pamphlet","tree"],["tape","fish"],["medal","instrument"],["tattoo","flower"],
-    ["manual","bird"],["guide","tree"],["string","fish"],["award","instrument"],["patch","flower"]
+    ["watch","bird"],["pen","tree"],["brush","color"],["screw","instrument"],["jar","flower"],
+    ["wallet","bird"],["scissors","tree"],["comb","color"],["pin","instrument"],["tube","flower"],
+    ["umbrella","bird"],["hammer","tree"],["ruler","color"],["clip","instrument"],["disk","flower"],
+    ["backpack","bird"],["stapler","tree"],["eraser","color"],["hook","instrument"],["card","flower"],
+    ["notebook","bird"],["calculator","tree"],["pencil","color"],["ring","instrument"],["ticket","flower"],
+    ["passport","bird"],["diary","tree"],["marker","color"],["bracelet","instrument"],["stamp","flower"],
+    ["receipt","bird"],["envelope","tree"],["crayon","color"],["necklace","instrument"],["coupon","flower"],
+    ["ticket","bird"],["folder","tree"],    ["chalk","color"],["earring","instrument"],["badge","flower"],
+    ["calendar","bird"],["binder","tree"],["paint","color"],["brooch","instrument"],["label","flower"],
+    ["magazine","bird"],["newspaper","tree"],["ink","color"],["pendant","instrument"],["tag","flower"],
+    ["bookmark","bird"],["postcard","tree"],["glue","color"],["charm","instrument"],["sticker","flower"],
+    ["booklet","bird"],["pamphlet","tree"],["tape","color"],["medal","instrument"],["tattoo","flower"],
+    ["manual","bird"],["guide","tree"],["string","color"],["award","instrument"],["patch","flower"]
   ],
   partWhole: [
     // Related pairs (20)
@@ -52,10 +52,10 @@ export const tier1Categories = {
     ["stem","flower"],["door","car"],["cover","book"],["branch","tree"],["handle","knife"],
     ["button","keyboard"],["propeller","plane"],["skin","fruit"],["lock","door"],["heel","foot"],
     // Unrelated pairs (20)
-    ["river","desert"],["engine","wheel"],["sky","page"],["root","petal"],["mouse","wing"],
-    ["toe","hand"],["cloud","car"],["glass","book"],["stone","tree"],["water","fire"],
-    ["mountain","ocean"],["computer","wheel"],["moon","page"],["sand","petal"],["cat","wing"],
-    ["finger","hand"],["rain","car"],["metal","book"],["rock","tree"],["ice","fire"]
+    ["river","desert"],["engine","color"],["sky","page"],["root","petal"],["mouse","wing"],
+    ["toe","hand"],["cloud","car"],["glass","color"],["stone","tree"],["water","fire"],
+    ["mountain","ocean"],["computer","color"],["moon","page"],["sand","petal"],["cat","wing"],
+    ["finger","foot"],["rain","car"],["metal","book"],["rock","tree"],["ice","fire"]
   ],
   functional: [
     // Related pairs (20)
@@ -64,10 +64,10 @@ export const tier1Categories = {
     ["scissors","paper"],["eraser","pencil"],["soap","water"],["toothbrush","teeth"],["shovel","dirt"],
     ["fork","food"],["cup","liquid"],["towel","water"],["comb","hair"],["bandage","wound"],
     // Unrelated pairs (20)
-    ["key","cloud"],["pen","stone"],["needle","glass"],["brush","sand"],["plug","book"],
-    ["charger","shoe"],["hammer","leaf"],["spoon","wall"],["glove","tree"],["umbrella","piano"],
+    ["key","cloud"],["pen","stone"],["needle","glass"],["brush","color"],["plug","book"],
+    ["charger","shoe"],["hammer","leaf"],["spoon","color"],["glove","tree"],["umbrella","piano"],
     ["scissors","music"],["eraser","car"],["soap","mountain"],["toothbrush","sky"],["shovel","computer"],
-    ["fork","book"],["cup","tree"],["towel","rock"],["comb","water"],["bandage","paper"]
+    ["fork","book"],["cup","tree"],["towel","color"],["comb","dry"],["bandage","paper"]
   ],
   colorProperty: [
     // Related pairs (20)
@@ -76,10 +76,10 @@ export const tier1Categories = {
     ["banana","yellow"],["blood","red"],["leaf","green"],["cloud","white"],["dirt","brown"],
     ["fire","orange"],["grape","purple"],["carrot","orange"],["eggplant","purple"],["lime","green"],
     // Unrelated pairs (20)
-    ["grass","coal"],["sky","chocolate"],["lemon","lavender"],["cherry","snow"],["coal","pumpkin"],
-    ["paper","ocean"],["tiger","emerald"],["amethyst","sand"],["desert","coffee"],["night","lemon"],
-    ["banana","red"],["blood","blue"],["leaf","purple"],["cloud","black"],["dirt","white"],
-    ["fire","blue"],["grape","yellow"],["carrot","green"],["eggplant","red"],["lime","purple"]
+    ["grass","coal"],["sky","chocolate"],["lemon","color"],["cherry","snow"],["coal","pumpkin"],
+    ["paper","ocean"],["tiger","color"],["amethyst","sand"],["desert","coffee"],["night","lemon"],
+    ["banana","color"],["blood","blue"],["leaf","purple"],["cloud","black"],["dirt","white"],
+    ["fire","color"],["grape","yellow"],["carrot","green"],["eggplant","red"],["lime","purple"]
   ],
   antonyms: [
     // Related pairs (20)
@@ -88,10 +88,10 @@ export const tier1Categories = {
     ["big","small"],["high","low"],["old","new"],["young","old"],["rich","poor"],
     ["good","bad"],["true","false"],["yes","no"],["left","right"],["front","back"],
     // Unrelated pairs (20)
-    ["hot","warm"],["fast","quick"],["light","bright"],["up","over"],["empty","hollow"],
-    ["early","soon"],["strong","solid"],["happy","glad"],["open","ajar"],["near","close"],
-    ["big","large"],["high","tall"],["old","ancient"],["young","new"],["rich","wealthy"],
-    ["good","nice"],["true","real"],["yes","sure"],["left","west"],["front","forward"]
+    ["hot","color"],["fast","shape"],["light","texture"],["up","weight"],["empty","height"],
+    ["early","color"],["strong","shape"],["happy","texture"],["open","weight"],["near","height"],
+    ["big","color"],["high","shape"],["old","texture"],["young","weight"],["rich","height"],
+    ["good","color"],["true","shape"],["yes","texture"],["left","weight"],["front","height"]
   ],
   actionObject: [
     // Related pairs (20)
@@ -102,8 +102,8 @@ export const tier1Categories = {
     // Unrelated pairs (20)
     ["eat","shoe"],["read","rain"],["write","sky"],["drink","stone"],["throw","cloud"],
     ["cut","music"],["drive","tree"],["bake","glass"],["play","wall"],["wash","smoke"],
-    ["sleep","car"],["cook","book"],["sing","table"],["dance","chair"],["swim","mountain"],
-    ["fly","book"],["climb","water"],["paint","food"],["build","song"],["plant","music"]
+    ["sleep","car"],["cook","raw"],["sing","table"],["dance","chair"],["swim","mountain"],
+    ["fly","book"],["climb","stairs"],["paint","food"],["build","song"],["plant","music"]
   ],
   // Additional semantic categories
   spatial: [
@@ -113,10 +113,10 @@ export const tier1Categories = {
     ["front","rear"],["left","right"],["forward","backward"],["upward","downward"],["inward","outward"],
     ["nearby","distant"],["adjacent","separate"],["parallel","perpendicular"],["vertical","horizontal"],["diagonal","straight"],
     // Unrelated pairs (20)
-    ["top","side"],["inside","middle"],["north","center"],["east","top"],["above","nearby"],
-    ["center","left"],["middle","front"],["beginning","upward"],["start","parallel"],["first","diagonal"],
-    ["front","north"],["left","center"],["forward","top"],["upward","east"],["inward","left"],
-    ["nearby","top"],["adjacent","center"],["parallel","north"],["vertical","left"],["diagonal","top"]
+    ["top","color"],["inside","shape"],["north","texture"],["east","weight"],["above","height"],
+    ["center","color"],["middle","shape"],["beginning","texture"],["start","weight"],["first","height"],
+    ["front","color"],["left","shape"],["forward","texture"],["upward","weight"],["inward","height"],
+    ["nearby","color"],["adjacent","shape"],["parallel","texture"],["vertical","weight"],["diagonal","height"]
   ],
   temporal: [
     // Related pairs (20)
@@ -125,10 +125,10 @@ export const tier1Categories = {
     ["now","then"],["present","absent"],["current","previous"],["recent","ancient"],["modern","old"],
     ["new","used"],["fresh","stale"],["recent","old"],["contemporary","historical"],["immediate","delayed"],
     // Unrelated pairs (20)
-    ["morning","spring"],["dawn","summer"],["sunrise","yesterday"],["spring","now"],["summer","present"],
-    ["yesterday","fresh"],["past","modern"],["before","immediate"],["earlier","current"],["soon","historical"],
-    ["now","spring"],["present","dawn"],["current","summer"],["recent","spring"],["modern","dawn"],
-    ["new","yesterday"],["fresh","past"],["recent","before"],["contemporary","earlier"],["immediate","soon"]
+    ["morning","color"],["dawn","shape"],["sunrise","texture"],["spring","weight"],["summer","height"],
+    ["yesterday","color"],["past","shape"],["before","texture"],["earlier","weight"],["soon","height"],
+    ["now","color"],["present","shape"],["current","texture"],["recent","weight"],["modern","height"],
+    ["new","color"],["fresh","shape"],["recent","texture"],["contemporary","weight"],["immediate","height"]
   ],
   size: [
     // Related pairs (20)
@@ -137,10 +137,10 @@ export const tier1Categories = {
     ["large","small"],["big","little"],["huge","tiny"],["massive","small"],["enormous","little"],
     ["colossal","tiny"],["gigantic","small"],["vast","little"],["immense","tiny"],["tremendous","small"],
     // Unrelated pairs (20)
-    ["giant","large"],["huge","big"],["massive","huge"],["enormous","massive"],["colossal","enormous"],
-    ["gigantic","colossal"],["vast","gigantic"],["immense","vast"],["tremendous","immense"],["monumental","tremendous"],
-    ["large","big"],["big","huge"],["huge","massive"],["massive","enormous"],["enormous","colossal"],
-    ["colossal","gigantic"],["gigantic","vast"],["vast","immense"],["immense","tremendous"],["tremendous","monumental"]
+    ["giant","color"],["huge","shape"],["massive","texture"],["enormous","weight"],["colossal","height"],
+    ["gigantic","color"],["vast","shape"],["immense","texture"],["tremendous","weight"],["monumental","height"],
+    ["large","color"],["big","shape"],["huge","texture"],["massive","weight"],["enormous","height"],
+    ["colossal","color"],["gigantic","shape"],["vast","texture"],["immense","weight"],["tremendous","height"]
   ],
   quantity: [
     // Related pairs (20)
@@ -149,10 +149,10 @@ export const tier1Categories = {
     ["all","none"],["every","no"],["each","neither"],["both","neither"],["either","neither"],
     ["some","none"],["most","least"],["majority","minority"],["maximum","minimum"],["total","partial"],
     // Unrelated pairs (20)
-    ["many","numerous"],["numerous","abundant"],["abundant","plentiful"],["plentiful","countless"],["countless","multiple"],
-    ["multiple","several"],["several","various"],["various","diverse"],["diverse","different"],["different","all"],
-    ["all","every"],["every","each"],["each","both"],["both","either"],["either","some"],
-    ["some","most"],["most","majority"],["majority","maximum"],["maximum","total"],["total","many"]
+    ["many","color"],["numerous","shape"],["abundant","texture"],["plentiful","weight"],["countless","height"],
+    ["multiple","color"],["several","shape"],["various","texture"],["diverse","weight"],["different","height"],
+    ["all","color"],["every","shape"],["each","texture"],["both","weight"],["either","height"],
+    ["some","color"],["most","shape"],["majority","texture"],["maximum","weight"],["total","height"]
   ],
   emotional: [
     // Related pairs (20)
@@ -185,10 +185,10 @@ export const tier1Categories = {
     ["thunder","lightning"],["hurricane","tornado"],["drizzle","shower"],["blizzard","avalanche"],["drought","flood"],
     ["humidity","moisture"],["temperature","thermometer"],["barometer","pressure"],["forecast","prediction"],["climate","weather"],
     // Unrelated pairs (20)
-    ["sun","rain"],["rain","snow"],["snow","wind"],["wind","cloud"],["cloud","storm"],
-    ["storm","fog"],["fog","ice"],["ice","heat"],["heat","cold"],["cold","thunder"],
-    ["thunder","hurricane"],["hurricane","drizzle"],["drizzle","blizzard"],["blizzard","drought"],["drought","humidity"],
-    ["humidity","temperature"],["temperature","barometer"],["barometer","forecast"],["forecast","climate"],["climate","sun"]
+    ["sun","color"],["rain","shape"],["snow","texture"],["wind","weight"],["cloud","height"],
+    ["storm","color"],["fog","shape"],["ice","texture"],["heat","weight"],["cold","height"],
+    ["thunder","color"],["hurricane","shape"],["drizzle","texture"],["blizzard","weight"],["drought","height"],
+    ["humidity","color"],["temperature","shape"],["barometer","texture"],["forecast","weight"],["climate","height"]
   ],
   body: [
     // Related pairs (20)
@@ -197,10 +197,10 @@ export const tier1Categories = {
     ["arm","reach"],["finger","point"],["toe","balance"],["head","think"],["neck","turn"],
     ["back","support"],["chest","breathe"],["stomach","digest"],["liver","filter"],["kidney","clean"],
     // Unrelated pairs (20)
-    ["heart","lung"],["lung","brain"],["brain","eye"],["eye","ear"],["ear","nose"],
-    ["nose","tongue"],["tongue","hand"],["hand","foot"],["foot","leg"],["leg","arm"],
-    ["arm","finger"],["finger","toe"],["toe","head"],["head","neck"],["neck","back"],
-    ["back","chest"],["chest","stomach"],["stomach","liver"],["liver","kidney"],["kidney","heart"]
+    ["heart","color"],["lung","shape"],["brain","texture"],["eye","weight"],["ear","height"],
+    ["nose","color"],["tongue","shape"],["hand","texture"],["foot","weight"],["leg","height"],
+    ["arm","color"],["finger","shape"],["toe","texture"],["head","weight"],["neck","height"],
+    ["back","color"],["chest","shape"],["stomach","texture"],["liver","weight"],["kidney","height"]
   ],
   profession: [
     // Related pairs (100)
