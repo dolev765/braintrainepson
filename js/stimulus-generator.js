@@ -258,7 +258,7 @@ export class StimulusGenerator {
       case 'ordinal':
         return parseInt(value.replace(/\D/g, ''));
       case 'percentage':
-        return parseFloat(value.replace('%', ''));
+        return parseFloat(value.replace('%', '')) / 100;
       case 'tally':
         return this.tallyToNumber(value);
       default:
