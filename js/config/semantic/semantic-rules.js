@@ -39,13 +39,13 @@ export const SEMANTIC_RULES = {
     examples: ['grass-emerald', 'sky-ocean', 'lemon-sun']
   },
   antonyms: {
-    title: 'Antonyms',
-    description: "Judge opposites. Press 'J' if the words are opposites (e.g., hot–cold), 'F' otherwise.",
+    title: 'Similarity',
+    description: "Judge word similarity. Press 'J' if the words are similar in meaning (e.g., hot–warm), 'F' if they are different (e.g., hot–cold).",
     difficulty: 'easy',
     tier: 1,
     requiresExpertise: false,
     defaultEnabled: true,
-    examples: ['hot-cold', 'fast-slow', 'light-dark']
+    examples: ['hot-warm (J)', 'fast-quick (J)', 'hot-cold (F)']
   },
   actionObject: {
     title: 'Action–Object',
@@ -58,48 +58,48 @@ export const SEMANTIC_RULES = {
   },
   spatial: {
     title: 'Spatial Relations',
-    description: "Judge spatial relationships. Press 'J' if the words are spatial opposites (e.g., top–bottom), 'F' otherwise.",
+    description: "Judge spatial relationships. Press 'J' if the words are spatially related (e.g., top–bottom), 'F' if they are not spatially related.",
     difficulty: 'medium',
     tier: 1,
     requiresExpertise: false,
     defaultEnabled: true,
-    examples: ['top-bottom', 'inside-outside', 'north-south']
+    examples: ['top-bottom (J)', 'inside-outside (J)', 'top-color (F)']
   },
   temporal: {
     title: 'Temporal Relations',
-    description: "Judge time relationships. Press 'J' if the words are temporal opposites (e.g., morning–evening), 'F' otherwise.",
+    description: "Judge time relationships. Press 'J' if the words are temporally related (e.g., morning–evening), 'F' if they are not temporally related.",
     difficulty: 'medium',
     tier: 1,
     requiresExpertise: false,
     defaultEnabled: true,
-    examples: ['morning-evening', 'dawn-dusk', 'spring-autumn']
+    examples: ['morning-evening (J)', 'dawn-dusk (J)', 'morning-color (F)']
   },
   size: {
     title: 'Size Relations',
-    description: "Judge size relationships. Press 'J' if the words are size opposites (e.g., giant–tiny), 'F' otherwise.",
+    description: "Judge size relationships. Press 'J' if the words are size-related (e.g., giant–tiny), 'F' if they are not size-related.",
     difficulty: 'easy',
     tier: 1,
     requiresExpertise: false,
     defaultEnabled: true,
-    examples: ['giant-tiny', 'huge-miniature', 'massive-microscopic']
+    examples: ['giant-tiny (J)', 'huge-miniature (J)', 'giant-color (F)']
   },
   quantity: {
     title: 'Quantity Relations',
-    description: "Judge quantity relationships. Press 'J' if the words are quantity opposites (e.g., many–few), 'F' otherwise.",
+    description: "Judge quantity relationships. Press 'J' if the words are quantity-related (e.g., many–few), 'F' if they are not quantity-related.",
     difficulty: 'medium',
     tier: 1,
     requiresExpertise: false,
     defaultEnabled: true,
-    examples: ['many-few', 'numerous-scarce', 'abundant-rare']
+    examples: ['many-few (J)', 'numerous-scarce (J)', 'many-color (F)']
   },
   emotional: {
     title: 'Emotional Relations',
-    description: "Judge emotional relationships. Press 'J' if the words are emotional opposites (e.g., joy–sorrow), 'F' otherwise.",
+    description: "Judge emotional relationships. Press 'J' if the words are emotionally related (e.g., joy–sorrow), 'F' if they are not emotionally related.",
     difficulty: 'hard',
     tier: 1,
     requiresExpertise: false,
     defaultEnabled: true,
-    examples: ['joy-sorrow', 'love-hate', 'hope-despair']
+    examples: ['joy-sorrow (J)', 'love-hate (J)', 'joy-color (F)']
   },
   material: {
     title: 'Material Relations',

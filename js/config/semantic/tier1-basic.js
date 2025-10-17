@@ -82,16 +82,16 @@ export const tier1Categories = {
     ["fire","color"],["grape","yellow"],["carrot","green"],["eggplant","red"],["lime","purple"]
   ],
   antonyms: [
-    // Related pairs (20)
+    // Related pairs - Similar words (20)
+    ["hot","warm"],["fast","quick"],["light","bright"],["up","high"],["empty","hollow"],
+    ["early","soon"],["strong","powerful"],["happy","glad"],["open","ajar"],["near","close"],
+    ["big","large"],["high","tall"],["old","ancient"],["young","new"],["rich","wealthy"],
+    ["good","nice"],["true","real"],["yes","sure"],["left","west"],["front","forward"],
+    // Unrelated pairs - Different words (20)
     ["hot","cold"],["fast","slow"],["light","dark"],["up","down"],["empty","full"],
     ["early","late"],["strong","weak"],["happy","sad"],["open","closed"],["near","far"],
     ["big","small"],["high","low"],["old","new"],["young","old"],["rich","poor"],
-    ["good","bad"],["true","false"],["yes","no"],["left","right"],["front","back"],
-    // Unrelated pairs (20)
-    ["hot","color"],["fast","shape"],["light","texture"],["up","weight"],["empty","height"],
-    ["early","color"],["strong","shape"],["happy","texture"],["open","weight"],["near","height"],
-    ["big","color"],["high","shape"],["old","texture"],["young","weight"],["rich","height"],
-    ["good","color"],["true","shape"],["yes","texture"],["left","weight"],["front","height"]
+    ["good","bad"],["true","false"],["yes","no"],["left","right"],["front","back"]
   ],
   actionObject: [
     // Related pairs (20)
