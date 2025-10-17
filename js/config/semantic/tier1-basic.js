@@ -1,5 +1,9 @@
 // Tier 1 - Basic Semantic Categories (Auto-enabled)
 
+import { tier1ExpandedCategories } from './tier1-expanded.js';
+import { additionalSemanticCategories } from './additional-categories.js';
+import { massiveSemanticCategories } from './massive-categories.js';
+
 export const tier1Categories = {
 // TIER 1 - BASIC (Auto-enabled): Universal knowledge
   categorical: [
@@ -326,4 +330,9 @@ export const tier1Categories = {
     ["1","2"],["2","3"],["3","4"],["4","5"],["5","6"],["6","7"],["7","8"],["8","9"],["9","A"],["10","B"],
     ["11","C"],["12","D"],["13","E"],["14","F"],["15","10"],["16","11"],["17","12"],["18","13"],["19","14"],["20","15"]
   ],
+
+  // MERGE EXPANDED CATEGORIES
+  ...tier1ExpandedCategories,
+  ...additionalSemanticCategories,
+  ...massiveSemanticCategories
 };

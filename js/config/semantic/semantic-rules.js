@@ -238,5 +238,43 @@ export const SEMANTIC_RULES = {
     requiresExpertise: true,
     defaultEnabled: false,
     examples: ['metacognition-self-awareness', 'self-regulation-control', 'strategy-approach']
+  },
+
+  // NEW MASSIVE EXPANSION CATEGORIES
+  professions: {
+    title: 'Professions',
+    description: "Judge professional relationships. Press 'J' if the words are professionally related (e.g., doctor–physician), 'F' if they are not professionally related.",
+    difficulty: 'medium',
+    tier: 1,
+    requiresExpertise: false,
+    defaultEnabled: true,
+    examples: ['doctor-physician (J)', 'teacher-educator (J)', 'doctor-mountain (F)']
+  },
+  emotions: {
+    title: 'Emotions',
+    description: "Judge emotional relationships. Press 'J' if the words are emotionally related (e.g., happy–joyful), 'F' if they are not emotionally related.",
+    difficulty: 'medium',
+    tier: 1,
+    requiresExpertise: false,
+    defaultEnabled: true,
+    examples: ['happy-joyful (J)', 'sad-melancholy (J)', 'happy-mountain (F)']
+  },
+  foodCooking: {
+    title: 'Food & Cooking',
+    description: "Judge food relationships. Press 'J' if the words are food-related (e.g., apple–fruit), 'F' if they are not food-related.",
+    difficulty: 'easy',
+    tier: 1,
+    requiresExpertise: false,
+    defaultEnabled: true,
+    examples: ['apple-fruit (J)', 'carrot-vegetable (J)', 'apple-mountain (F)']
+  },
+  sportsActivities: {
+    title: 'Sports & Activities',
+    description: "Judge sports relationships. Press 'J' if the words are sports-related (e.g., football–sport), 'F' if they are not sports-related.",
+    difficulty: 'easy',
+    tier: 1,
+    requiresExpertise: false,
+    defaultEnabled: true,
+    examples: ['football-sport (J)', 'basketball-sport (J)', 'football-mountain (F)']
   }
 };
