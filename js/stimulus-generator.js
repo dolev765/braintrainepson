@@ -94,6 +94,7 @@ export class StimulusGenerator {
     ];
     
     const isSameTrial = gameState.getNextTrialType();
+    console.log(`DEBUG: Trial ${gameState.trialCount}, isSameTrial: ${isSameTrial}, rule: ${gameState.currentRule}`);
     
     if (gameState.currentRule === 1) {
       return this.generatePhysicalPropertyStimulus(selectedCombination, leastUsedFormat, isSameTrial);
@@ -205,11 +206,14 @@ export class StimulusGenerator {
         value2 = this.getNumericalValue(numberData[format2][index2], format2);
       }
       
+      const sameMeaning = Math.abs(value1 - value2) < 0.01;
+      console.log(`DEBUG: Different meaning trial - ${numberData[format1][index1]} (${value1}) vs ${numberData[format2][index2]} (${value2}), sameMeaning: ${sameMeaning}`);
+      
       return {
         item1: { value: numberData[format1][index1], format: format1, index: index1 },
         item2: { value: numberData[format2][index2], format: format2, index: index2 },
         sameFormat: format1 === format2,
-        sameMeaning: Math.abs(value1 - value2) < 0.01 // Consider same if within 0.01 tolerance
+        sameMeaning: sameMeaning
       };
     }
   }
