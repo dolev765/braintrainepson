@@ -174,13 +174,18 @@ export class GameState {
     
     const trialType = this.trialTypes[this.trialCount];
     
+    // Don't increment counters here - they should be incremented when the trial is actually used
+    return trialType;
+  }
+
+  // Mark trial as used (call this when trial is actually presented)
+  markTrialAsUsed() {
+    const trialType = this.trialTypes[this.trialCount];
     if (trialType) {
       this.relatedTrialsUsed++;
     } else {
       this.unrelatedTrialsUsed++;
     }
-    
-    return trialType;
   }
 
   // Verify trial balance
