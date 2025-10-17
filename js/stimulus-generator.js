@@ -180,19 +180,116 @@ export class StimulusGenerator {
       this.formatUsage[format1]++;
       this.formatUsage[format2]++;
       
-      let index1 = Math.floor(Math.random() * gameState.numberRange);
-      let index2;
+      // Generate different numbers with different actual values
+      let index1, index2, value1, value2;
+      let attempts = 0;
+      const maxAttempts = 100;
+      
       do {
+        index1 = Math.floor(Math.random() * gameState.numberRange);
         index2 = Math.floor(Math.random() * gameState.numberRange);
-      } while (index1 === index2);
+        
+        // Get the actual numerical values
+        value1 = this.getNumericalValue(numberData[format1][index1], format1);
+        value2 = this.getNumericalValue(numberData[format2][index2], format2);
+        
+        attempts++;
+      } while ((index1 === index2 || Math.abs(value1 - value2) < 0.01) && attempts < maxAttempts);
+      
+      // If we couldn't find different values, just ensure different indices
+      if (attempts >= maxAttempts) {
+        do {
+          index2 = Math.floor(Math.random() * gameState.numberRange);
+        } while (index1 === index2);
+        value1 = this.getNumericalValue(numberData[format1][index1], format1);
+        value2 = this.getNumericalValue(numberData[format2][index2], format2);
+      }
       
       return {
         item1: { value: numberData[format1][index1], format: format1, index: index1 },
         item2: { value: numberData[format2][index2], format: format2, index: index2 },
         sameFormat: format1 === format2,
-        sameMeaning: false
+        sameMeaning: Math.abs(value1 - value2) < 0.01 // Consider same if within 0.01 tolerance
       };
     }
+  }
+
+  // Helper method to get numerical value from any number format
+  getNumericalValue(value, format) {
+    switch (format) {
+      case 'arabic':
+        return parseFloat(value);
+      case 'word':
+        return this.wordToNumber(value);
+      case 'roman':
+        return this.romanToNumber(value);
+      case 'binary':
+        return parseInt(value, 2);
+      case 'hexadecimal':
+        return parseInt(value, 16);
+      case 'scientific':
+        return parseFloat(value.replace('×10', 'e').replace('⁰', '0').replace('¹', '1').replace('²', '2').replace('³', '3'));
+      case 'fraction':
+        const [numerator, denominator] = value.split('/').map(Number);
+        return numerator / denominator;
+      case 'ordinal':
+        return parseInt(value.replace(/\D/g, ''));
+      case 'percentage':
+        return parseFloat(value.replace('%', ''));
+      case 'tally':
+        return this.tallyToNumber(value);
+      default:
+        return 0;
+    }
+  }
+
+  // Convert word numbers to numerical values
+  wordToNumber(word) {
+    const wordMap = {
+      'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+      'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
+      'eleven': 11, 'twelve': 12, 'thirteen': 13, 'fourteen': 14, 'fifteen': 15,
+      'sixteen': 16, 'seventeen': 17, 'eighteen': 18, 'nineteen': 19, 'twenty': 20
+    };
+    
+    // Handle compound words like "twenty-one"
+    if (word.includes('-')) {
+      const parts = word.split('-');
+      return wordMap[parts[0]] + (wordMap[parts[1]] || 0);
+    }
+    
+    // Handle "one hundred" etc.
+    if (word.includes('hundred')) {
+      const parts = word.split(' ');
+      if (parts.length === 2) {
+        return wordMap[parts[0]] * 100;
+      } else if (parts.length === 3) {
+        return wordMap[parts[0]] * 100 + wordMap[parts[2]];
+      }
+    }
+    
+    return wordMap[word] || 0;
+  }
+
+  // Convert Roman numerals to numbers
+  romanToNumber(roman) {
+    const values = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+    let result = 0;
+    for (let i = 0; i < roman.length; i++) {
+      if (i + 1 < roman.length && values[roman[i]] < values[roman[i + 1]]) {
+        result -= values[roman[i]];
+      } else {
+        result += values[roman[i]];
+      }
+    }
+    return result;
+  }
+
+  // Convert tally marks to numbers
+  tallyToNumber(tally) {
+    const groups = (tally.match(/卌/g) || []).length;
+    const remainder = (tally.match(/\|/g) || []).length;
+    return groups * 5 + remainder;
   }
 
   // Select random rule and prepare next trial
