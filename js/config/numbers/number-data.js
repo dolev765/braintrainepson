@@ -1,29 +1,78 @@
 // Number data for stimulus generation (1-1000 items per format)
 
 export const numberData = {
-  arabic: Array.from({length: 1000}, (_, i) => (i + 1).toString()),
+  arabic: Array.from({length: 1000}, (_, i) => {
+    const num = i + 1;
+    // 70% integers, 30% decimals
+    if (Math.random() < 0.7) {
+      return num.toString();
+    } else {
+      // Generate decimals with 1-3 decimal places
+      const decimalPlaces = Math.floor(Math.random() * 3) + 1;
+      const multiplier = Math.pow(10, decimalPlaces);
+      const decimalValue = (Math.random() * num * multiplier) / multiplier;
+      return decimalValue.toFixed(decimalPlaces);
+    }
+  }),
   word: Array.from({length: 1000}, (_, i) => {
     const num = i + 1;
-    if (num <= 20) return ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty"][num];
-    if (num < 100) {
-      const tens = Math.floor(num / 10);
-      const ones = num % 10;
-      const tensWords = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
-      return ones === 0 ? tensWords[tens] : `${tensWords[tens]}-${["","one","two","three","four","five","six","seven","eight","nine"][ones]}`;
+    // 70% integers, 30% decimals
+    if (Math.random() < 0.7) {
+      if (num <= 20) return ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty"][num];
+      if (num < 100) {
+        const tens = Math.floor(num / 10);
+        const ones = num % 10;
+        const tensWords = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+        return ones === 0 ? tensWords[tens] : `${tensWords[tens]}-${["","one","two","three","four","five","six","seven","eight","nine"][ones]}`;
+      }
+      if (num < 1000) {
+        const hundreds = Math.floor(num / 100);
+        const remainder = num % 100;
+        const hundredWord = hundreds === 1 ? "one hundred" : `${["","one","two","three","four","five","six","seven","eight","nine"][hundreds]} hundred`;
+        if (remainder === 0) return hundredWord;
+        if (remainder <= 20) return `${hundredWord} ${["","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty"][remainder]}`;
+        const tens = Math.floor(remainder / 10);
+        const ones = remainder % 10;
+        const tensWords = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+        const onesWord = ones === 0 ? "" : `-${["","one","two","three","four","five","six","seven","eight","nine"][ones]}`;
+        return `${hundredWord} ${tensWords[tens]}${onesWord}`;
+      }
+      return "one thousand";
+    } else {
+      // Generate decimal words
+      const decimalPlaces = Math.floor(Math.random() * 3) + 1;
+      const multiplier = Math.pow(10, decimalPlaces);
+      const decimalValue = (Math.random() * num * multiplier) / multiplier;
+      const integerPart = Math.floor(decimalValue);
+      const decimalPart = Math.round((decimalValue - integerPart) * multiplier);
+      
+      let result = "";
+      if (integerPart > 0) {
+        if (integerPart <= 20) {
+          result = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty"][integerPart];
+        } else if (integerPart < 100) {
+          const tens = Math.floor(integerPart / 10);
+          const ones = integerPart % 10;
+          const tensWords = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+          result = ones === 0 ? tensWords[tens] : `${tensWords[tens]}-${["","one","two","three","four","five","six","seven","eight","nine"][ones]}`;
+        } else {
+          result = "one hundred";
+        }
+      }
+      
+      if (decimalPart > 0) {
+        const decimalWords = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+        let decimalStr = "";
+        const decimalStr_parts = decimalPart.toString().split('');
+        for (let i = 0; i < decimalStr_parts.length; i++) {
+          decimalStr += decimalWords[parseInt(decimalStr_parts[i])];
+          if (i < decimalStr_parts.length - 1) decimalStr += " ";
+        }
+        result += result ? ` point ${decimalStr}` : `zero point ${decimalStr}`;
+      }
+      
+      return result || "zero";
     }
-    if (num < 1000) {
-      const hundreds = Math.floor(num / 100);
-      const remainder = num % 100;
-      const hundredWord = hundreds === 1 ? "one hundred" : `${["","one","two","three","four","five","six","seven","eight","nine"][hundreds]} hundred`;
-      if (remainder === 0) return hundredWord;
-      if (remainder <= 20) return `${hundredWord} ${["","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty"][remainder]}`;
-      const tens = Math.floor(remainder / 10);
-      const ones = remainder % 10;
-      const tensWords = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
-      const onesWord = ones === 0 ? "" : `-${["","one","two","three","four","five","six","seven","eight","nine"][ones]}`;
-      return `${hundredWord} ${tensWords[tens]}${onesWord}`;
-    }
-    return "one thousand";
   }),
   roman: Array.from({length: 1000}, (_, i) => {
     let num = i + 1;

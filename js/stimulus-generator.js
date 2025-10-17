@@ -275,6 +275,25 @@ export class StimulusGenerator {
       'sixteen': 16, 'seventeen': 17, 'eighteen': 18, 'nineteen': 19, 'twenty': 20
     };
     
+    // Handle decimal words like "two point five"
+    if (word.includes('point')) {
+      const parts = word.split('point');
+      const integerPart = this.parseIntegerWord(parts[0].trim());
+      const decimalPart = this.parseDecimalWord(parts[1].trim());
+      return integerPart + decimalPart;
+    }
+    
+    return this.parseIntegerWord(word);
+  }
+  
+  parseIntegerWord(word) {
+    const wordMap = {
+      'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+      'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
+      'eleven': 11, 'twelve': 12, 'thirteen': 13, 'fourteen': 14, 'fifteen': 15,
+      'sixteen': 16, 'seventeen': 17, 'eighteen': 18, 'nineteen': 19, 'twenty': 20
+    };
+    
     // Handle compound words like "twenty-one"
     if (word.includes('-')) {
       const parts = word.split('-');
@@ -292,6 +311,26 @@ export class StimulusGenerator {
     }
     
     return wordMap[word] || 0;
+  }
+  
+  parseDecimalWord(decimalStr) {
+    const wordMap = {
+      'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+      'six': 6, 'seven': 7, 'eight': 8, 'nine': 9
+    };
+    
+    const parts = decimalStr.split(' ');
+    let result = 0;
+    let decimalPlace = 0.1;
+    
+    for (const part of parts) {
+      if (wordMap[part] !== undefined) {
+        result += wordMap[part] * decimalPlace;
+        decimalPlace *= 0.1;
+      }
+    }
+    
+    return result;
   }
 
   // Convert Roman numerals to numbers
