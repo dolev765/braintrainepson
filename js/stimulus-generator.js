@@ -94,7 +94,6 @@ export class StimulusGenerator {
     ];
     
     const isSameTrial = gameState.getNextTrialType();
-    console.log(`DEBUG: Trial ${gameState.trialCount}, isSameTrial: ${isSameTrial}, rule: ${gameState.currentRule}`);
     
     if (gameState.currentRule === 1) {
       return this.generatePhysicalPropertyStimulus(selectedCombination, leastUsedFormat, isSameTrial);
@@ -183,8 +182,6 @@ export class StimulusGenerator {
         value2 = value1;
       }
       
-      console.log(`DEBUG: Same meaning trial - ${numberData[format1][index1]} (${value1}) vs ${numberData[format2][index2]} (${value2}), sameMeaning: true`);
-      
       return {
         item1: { value: numberData[format1][index1], format: format1, index: index1 },
         item2: { value: numberData[format2][index2], format: format2, index: index2 },
@@ -230,7 +227,6 @@ export class StimulusGenerator {
       }
       
       const sameMeaning = Math.abs(value1 - value2) < 0.01;
-      console.log(`DEBUG: Different meaning trial - ${numberData[format1][index1]} (${value1}) vs ${numberData[format2][index2]} (${value2}), sameMeaning: ${sameMeaning}`);
       
       return {
         item1: { value: numberData[format1][index1], format: format1, index: index1 },

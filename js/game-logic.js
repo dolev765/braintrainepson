@@ -141,7 +141,6 @@ export class GameLogic {
     if (gameState.currentRule === 1) {
       isCorrect = (response === gameState.currentPair.sameFormat);
     } else if (gameState.currentRule === 2) {
-      console.log(`DEBUG: Meaning rule - response: ${response}, sameMeaning: ${gameState.currentPair.sameMeaning}, isCorrect: ${response === gameState.currentPair.sameMeaning}`);
       isCorrect = (response === gameState.currentPair.sameMeaning);
     }
     
