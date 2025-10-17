@@ -155,16 +155,39 @@ export class StimulusGenerator {
   // Generate stimulus for meaning rule
   generateMeaningStimulus(combination, leastUsedFormat, isSameTrial) {
     if (isSameTrial) {
-      // Same meaning trial
-      const index = Math.floor(Math.random() * gameState.numberRange);
+      // Same meaning trial - find numbers with the same numerical value
       const format1 = combination.formats[0];
       const format2 = combination.formats[1];
       this.formatUsage[format1]++;
       this.formatUsage[format2]++;
       
+      // Find a number that exists in both formats with the same numerical value
+      let index1, index2, value1, value2;
+      let attempts = 0;
+      const maxAttempts = 100;
+      
+      do {
+        index1 = Math.floor(Math.random() * gameState.numberRange);
+        value1 = this.getNumericalValue(numberData[format1][index1], format1);
+        
+        // Find a matching value in format2
+        index2 = Math.floor(Math.random() * gameState.numberRange);
+        value2 = this.getNumericalValue(numberData[format2][index2], format2);
+        
+        attempts++;
+      } while (Math.abs(value1 - value2) > 0.01 && attempts < maxAttempts);
+      
+      // If we couldn't find matching values, just use the same index as fallback
+      if (attempts >= maxAttempts) {
+        index2 = index1;
+        value2 = value1;
+      }
+      
+      console.log(`DEBUG: Same meaning trial - ${numberData[format1][index1]} (${value1}) vs ${numberData[format2][index2]} (${value2}), sameMeaning: true`);
+      
       return {
-        item1: { value: numberData[format1][index], format: format1, index },
-        item2: { value: numberData[format2][index], format: format2, index },
+        item1: { value: numberData[format1][index1], format: format1, index: index1 },
+        item2: { value: numberData[format2][index2], format: format2, index: index2 },
         sameFormat: false,
         sameMeaning: true
       };
